@@ -1,0 +1,46 @@
+Resumo: Apresenta-se uma solução para comando intuitivo de robôs e programação rápida de robôs para montagem de pinos em portas de automóveis. Gestos estáticos 
+e dinâmicos são usados ​​para instruir um robô industrial na execução da tarefa de montagem. Uma rede neural artificial (RNA) foi utilizada no reconhecimento de 
+doze gestos estáticos e uma arquitetura de modelo oculto de Markov (HMM) foi utilizada no reconhecimento de dez gestos dinâmicos. Os resultados dessas duas 
+arquiteturas são comparados com os resultados exibidos por uma terceira arquitetura baseada na máquina de vetores de suporte (SVM). Os resultados mostram 
+taxas de reconhecimento de 96% e 94% para gestos estáticos e dinâmicos quando as arquiteturas ANN e HMM são usadas, respectivamente. A arquitetura SVM 
+apresenta melhores resultados alcançando taxas de reconhecimento de 97% e 96% para gestos estáticos e dinâmicos, respectivamente.
+
+Palavras-chave: Gesture spotting, programação de robôs, montagem robótica, robô industrial.
+
+1. Introdução
+A programação de robôs é uma tarefa demorada e monótona. Para agilizar esta tarefa, várias abordagens foram propostas, a maioria delas funciona de forma 
+semelhante a um joystick tradicional e faz uso de acelerômetros, eletromiografia e sistemas de visão, além de sistemas baseados em CAD terem sido explorados de 
+forma extensível. O grande problema desses sistemas é o fato de serem limitados a realizar movimentos do robô, ou seu usuário ter que carregar dispositivos 
+desconfortáveis, e em alguns casos não serem intuitivos. Para tornar os robôs mais fáceis de usar e expandir seu uso na indústria, a maneira como um usuário 
+interage com um robô precisa ser intuitiva e nenhum conhecimento técnico complexo deve ser necessário.
+
+O objetivo deste estudo é o desenvolvimento de um sistema intuitivo de programação de robôs baseado em gestos realizados. Para alcançar uma solução viável capaz 
+de identificar os gestos realizados pelos usuários, um sistema de visão é utilizado e os gestos realizados por um usuário são reconhecidos por três métodos 
+diferentes. A eficácia do sistema proposto é avaliada por meio de experimentos práticos identificando o método de reconhecimento que apresenta o melhor 
+desempenho. Adicionalmente, o sistema é testado em uma tarefa industrial de montagem de pinos em portas de automóveis.
+
+2 Estado da Arte
+
+A tecnologia de visão tem sido usada no reconhecimento de mãos humanas, rosto e comportamentos corporais [1,2,3]. Uma grande vantagem dessa tecnologia é o fato 
+de o usuário não precisar carregar nenhum dispositivo durante o processo de interação tornando o processo mais natural. Nos últimos desenvolvimentos nem é 
+necessária uma marca para ser realizada pelo usuário. Um requisito necessário é a presença humana no campo de visão do sensor de visão. Os sistemas de visão 
+têm dificuldade em produzir informações robustas ao enfrentar ambientes desordenados. Alguns sistemas baseados em visão são dependentes da visão, requerem um 
+fundo e iluminação uniformes e uma única pessoa (corpo inteiro ou parte do corpo) no campo de visão da câmera. Além disso, a oclusão de alguns pontos de 
+referência pode ocorrer com frequência, o que precisa ser enfrentado.
+
+Tem havido um interesse crescente pelo reconhecimento de gestos usando interfaces baseadas em visão, para reconhecimento de gestos de mão, braço e corpo 
+inteiro [4]. Soluções baseadas em visão têm sido usadas para detecção de gestos em tempo real aplicadas ao campo da robótica. Um estudo recente apresenta 
+um sistema de rastreamento de movimento combinando visão, sensor inercial e magnético para programação de robôs espaciais usando gestos [5]. A principal 
+limitação dessa abordagem está relacionada à execução de caminhos complexos. Um sistema de reconhecimento de palavras em linguagem de sinais americana (SL), 
+que usa como dispositivos de interação tanto uma luva de dados quanto um sistema de rastreamento de movimento, é apresentado em [6]. Sensores inerciais também 
+têm sido explorados para diferentes aplicações baseadas em gestos [7], [8].
+
+Várias técnicas de aprendizado de máquina foram propostas para lidar com reconhecimento de gestos, as técnicas mais exploradas contam com rede neural artificial 
+(RNA), modelos ocultos de Markov (HMM) e máquina de vetor de suporte (SVM). Mitra e Acharya fornecem uma visão geral completa das técnicas de reconhecimento de 
+padrões de gestos [9]. As técnicas de resolução de problemas baseadas em ANN demonstraram ser uma ferramenta confiável no reconhecimento de gestos, apresentando 
+boas capacidades de aprendizado e generalização. As RNAs têm sido aplicadas em uma ampla gama de situações, como o reconhecimento de posturas contínuas das mãos 
+a partir de imagens de vídeo em nível de cinza, reconhecimento de gestos com dados de aceleração como entrada [10], reconhecimento de movimento de corpo inteiro 
+para teleoperação de robôs e reconhecimento de SL [6] . A capacidade das redes neurais recorrentes (RNNs) para modelar o aprendizado de sequência temporal também 
+foi demonstrada [11]. No entanto, as RNNs ainda são difíceis de treinar. HMMs são métodos estocásticos conhecidos por sua aplicação no reconhecimento de padrões 
+temporais, incluindo a detecção de gestos [12]. Uma pesquisa sobre interação humano-computador usando reconhecimento de gestos e sistemas baseados em visão como 
+tecnologia de interação foi apresentada em [13].
