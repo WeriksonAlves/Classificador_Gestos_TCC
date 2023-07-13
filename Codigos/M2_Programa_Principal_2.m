@@ -19,7 +19,7 @@ clear; clc; close all;
 
 % Procura o diretorio com todos os arquivos relacionados ao projeto
 PastaAtual = pwd;
-PastaRaiz = 'Werikson';
+PastaRaiz = 'TCC__Classificador_de_Gestos';
 cd(PastaAtual(1:(strfind(PastaAtual,PastaRaiz)+numel(PastaRaiz)-1)))
 addpath(genpath(pwd))
 
@@ -50,8 +50,8 @@ Linha = 1;         % Linha do vetor de resposta
 NTeste = 1;        % Numero de classificações realizados atÃ© o momento
 
 % Itens da rotina de treino
-%Tarefa = "Validar";
-Tarefa = "Treinar";
+Tarefa = "Validar";
+% Tarefa = "Treinar";
 %Tarefa = "Construir";
 Gabarito = ['A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N'];
 VetorResp =['Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y' 'Y'];
